@@ -11,6 +11,7 @@
 //}
 if ('serviceWorker' in navigator) {
   // declaring scope manually
+  self.addEventListener('fetch',() => console.log("fetch"));
   navigator.serviceWorker.register('/sw.js', {scope: '/index.html'}).then(function(registration) {
     console.log('Service worker registration succeeded:', registration);
   }, /*catch*/ function(error) {
